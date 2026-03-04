@@ -1,0 +1,122 @@
+.recommendations-section {
+    padding-bottom: 80px;
+}
+
+.recommendations-container {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rec-card {
+    padding: 40px;
+    position: relative;
+    border-left: 4px solid var(--accent-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.quote-icon {
+    color: var(--accent-color);
+    opacity: 0.15;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+.rec-text {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+.rec-proof {
+    margin-bottom: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    display: inline-block;
+    max-width: 100%;
+    position: relative;
+}
+
+.rec-proof img {
+    max-width: 100%;
+    width: auto;
+    display: block;
+    height: auto;
+}
+
+.blur-overlay {
+    position: absolute;
+    bottom: 0;
+    top: 12%;
+    /* Starts below the 'Legal Solutions' title so it stays readable */
+    width: 32%;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 2;
+}
+
+.blur-left {
+    left: 0;
+}
+
+.blur-right {
+    right: 0;
+    width: 34%;
+}
+
+.rec-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: auto;
+}
+
+.author-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.author-info h4 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 4px;
+}
+
+.author-info span {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+    .rec-card {
+        padding: 30px 20px;
+    }
+
+    .rec-text {
+        font-size: 1rem;
+    }
+}

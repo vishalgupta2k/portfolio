@@ -1,0 +1,45 @@
+.preloader {
+              position: fixed;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              background: #030014;
+              z-index: 100000;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            }
+            .preloader-content {
+              text-align: center;
+            }
+            .preloader-logo {
+              font-size: 4rem;
+              font-weight: 800;
+              color: white;
+              margin-bottom: 40px;
+            }
+            .preloader-logo span {
+              color: #7c4dff;
+            }
+            .preloader-bar-container {
+              width: 300px;
+              height: 3px;
+              background: rgba(255,255,255,0.1);
+              border-radius: 2px;
+              overflow: hidden;
+              margin: 0 auto;
+            }
+            .preloader-bar {
+              height: 100%;
+              background: linear-gradient(90deg, #7c4dff, #00d2ff);
+              border-radius: 2px;
+              transition: width 0.1s ease;
+            }
+            .preloader-count {
+              margin-top: 20px;
+              color: rgba(255,255,255,0.4);
+              font-size: 0.85rem;
+              font-weight: 500;
+              letter-spacing: 2px;
+            }

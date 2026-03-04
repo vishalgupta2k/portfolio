@@ -1,0 +1,46 @@
+.contact-section { padding-bottom: 150px; }
+        .section-subtitle { color: var(--text-secondary); max-width: 600px; margin: 20px auto 0; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 40px; margin-top: 60px; }
+        .contact-card { padding: 40px; display: flex; flex-direction: column; gap: 30px; height: 100%; }
+        .contact-item { display: flex; gap: 20px; align-items: center; }
+        .contact-icon {
+          width: 50px; height: 50px; border-radius: 12px;
+          background: rgba(124, 77, 255, 0.1); color: var(--accent-color);
+          display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+        }
+        .contact-item h4 { margin-bottom: 4px; color: var(--text-color); }
+        .contact-item p { color: var(--text-secondary); font-size: 0.95rem; }
+        .contact-form { padding: 40px; display: flex; flex-direction: column; gap: 20px; }
+        .form-group input, .form-group textarea {
+          width: 100%; padding: 15px; background: rgba(255, 255, 255, 0.03);
+          border: 1px solid var(--glass-border); border-radius: 8px;
+          color: var(--text-color); font-family: inherit; font-size: 1rem; transition: var(--transition);
+        }
+        .form-group input:focus, .form-group textarea:focus {
+          outline: none; border-color: var(--accent-color); background: rgba(255, 255, 255, 0.05);
+        }
+        .submit-btn {
+          background: var(--accent-color); color: white; padding: 15px 30px;
+          border-radius: 8px; font-weight: 600; display: flex; align-items: center;
+          justify-content: center; gap: 10px; margin-top: 10px; width: 100%;
+        }
+        .submit-btn:hover {
+          background: var(--accent-secondary);
+          box-shadow: 0 10px 20px rgba(124, 77, 255, 0.2);
+        }
+        .submit-btn:disabled { opacity: 0.7; cursor: not-allowed; }
+        .form-status {
+          display: flex; align-items: center; justify-content: center; gap: 10px;
+          padding: 15px 30px; border-radius: 8px; font-weight: 600; margin-top: 10px;
+        }
+        .form-status.success {
+          background: rgba(74, 222, 128, 0.1); color: #4ade80;
+          border: 1px solid rgba(74, 222, 128, 0.2);
+        }
+        .form-status.error {
+          background: rgba(239, 68, 68, 0.1); color: #ef4444;
+          border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+        .spin { animation: spin 1s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }

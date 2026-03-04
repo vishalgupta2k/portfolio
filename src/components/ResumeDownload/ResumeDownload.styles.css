@@ -1,0 +1,32 @@
+.resume-download-btn {
+          position: relative;
+          overflow: hidden;
+          padding: 14px 30px;
+          border-radius: 10px;
+          background: linear-gradient(135deg, rgba(124,77,255,0.2), rgba(0,210,255,0.2));
+          border: 1px solid rgba(124,77,255,0.4);
+          color: white;
+          font-weight: 600;
+          font-size: 0.95rem;
+          backdrop-filter: blur(10px);
+          min-width: 200px;
+        }
+        .resume-download-btn:hover {
+          border-color: var(--accent-secondary);
+          box-shadow: 0 0 30px rgba(124,77,255,0.2);
+        }
+        .btn-inner {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+        }
+        .btn-shimmer {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 50%;
+          height: 100%;
+          background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+          pointer-events: none;
+        }
