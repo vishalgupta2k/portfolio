@@ -1,19 +1,29 @@
+import nodemailer from 'nodemailer';
+
 export default async function handler(req, res) {
+    console.log('--- Incoming Contact Form Request ---');
+
     // Only allow POST
     if (req.method !== 'POST') {
+        console.log('Method not allowed:', req.method);
         return res.status(405).json({ error: 'Method not allowed' });
     }
 
     const { name, email, message } = req.body;
+    console.log(`Payload from ${name} (${email})`);
 
     if (!name || !email || !message) {
+        console.log('Validation failed: Missing fields');
         return res.status(400).json({ error: 'All fields are required' });
     }
 
-    // Dynamic import of nodemailer (works in Vercel serverless)
-    const nodemailer = await import('nodemailer');
+    // AUTH CHECK
+    if (!process.env.GMAIL_USER || !process.env.GMAIL_APP_PASSWORD) {
+        console.error('SERVER ERROR: Missing Environment Variables GMAIL_USER or GMAIL_APP_PASSWORD');
+        return res.status(500).json({ error: 'Server configuration error. Please check environment variables.' });
+    }
 
-    const transporter = nodemailer.default.createTransport({
+    const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: process.env.GMAIL_USER,
@@ -22,7 +32,8 @@ export default async function handler(req, res) {
     });
 
     try {
-        await transporter.sendMail({
+        console.log('Attempting to send mail via Gmail...');
+        const info = await transporter.sendMail({
             from: `"Portfolio Contact" <${process.env.GMAIL_USER}>`,
             to: process.env.GMAIL_USER,
             replyTo: email,
@@ -43,9 +54,17 @@ export default async function handler(req, res) {
       `,
         });
 
+        console.log('Message sent successfully:', info.messageId);
         return res.status(200).json({ success: true });
     } catch (error) {
-        console.error('Email error:', error);
-        return res.status(500).json({ error: 'Failed to send email' });
+        console.error('NODEMAILER ERROR:', error.message);
+        console.error('STACK:', error.stack);
+
+        // Provide more detail in the 500 response temporarily to help the user debug
+        return res.status(500).json({
+            error: 'Failed to send email',
+            details: error.message,
+            tip: 'Check if GMAIL_APP_PASSWORD is correct and has no spaces. It must be 16 characters.'
+        });
     }
 }
