@@ -8,9 +8,9 @@ export default function ResumeDownload() {
 
     const handleClick = () => {
         setIsDownloaded(true);
-        // Trigger actual download — user should place their resume at /resume.pdf in public folder
+        // Trigger actual download
         const link = document.createElement('a');
-        link.href = '/Vishal%20Gupta.pdf';
+        link.href = '/vishal-resume.pdf';
         link.download = 'Vishal_Gupta_Resume.pdf';
         link.click();
         setTimeout(() => setIsDownloaded(false), 3000);
@@ -54,8 +54,6 @@ export default function ResumeDownload() {
                     transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
                 />
             </motion.button>
-
-            
         </>
     );
 }
