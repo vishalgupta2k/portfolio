@@ -19,6 +19,7 @@ import SmoothScroll from './components/SmoothScroll';
 import BackToTop from './components/BackToTop';
 import CommandPalette from './components/CommandPalette';
 import KonamiEgg from './components/KonamiEgg';
+import ChatBot from './components/ChatBot';
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -55,6 +56,7 @@ function App() {
             <BackToTop />
             <CommandPalette />
             <KonamiEgg />
+            <ChatBot />
           </div>
         </SmoothScroll>
       )}
