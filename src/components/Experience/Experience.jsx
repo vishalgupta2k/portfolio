@@ -7,7 +7,7 @@ export default function Experience() {
     {
       company: "Epiq Systems India Pvt. Ltd",
       role: "Associate Software Engineer",
-      period: "Sep 2024 – Present",
+      period: "Sep 2024 \u2013 Present",
       location: "Hyderabad, India",
       color: "#7c4dff",
       active: true,
@@ -25,17 +25,19 @@ export default function Experience() {
     {
       company: "Sensation Software Solutions Pvt. Ltd",
       role: "Software Engineer",
-      period: "Jan 2024 – Sep 2024",
+      period: "Jan 2024 \u2013 Sep 2024",
       location: "Mohali, India",
       color: "#00d2ff",
       active: false,
       points: [
-        "Architected a scalable Zero-to-One enterprise application from the ground up using the MERN stack, establishing foundational project structures and reusable component libraries.",
-        "Engineered centralized state management and client-side caching utilizing Redux, driving a 35% reduction in redundant API calls and ensuring robust data consensus.",
-        "Developed and deployed secure RESTful backends via Node.js and Express, seamlessly integrating decoupled frontend and backend environments for real-time synchronization.",
-        "Designed and implemented highly responsive, accessible user interfaces leveraging React, modern CSS architectures, and Bootstrap."
+        "Contributed to full-stack web development projects, building applications from scratch through the complete development lifecycle \u2014 from planning and design to deployment.",
+        "Built full-fledged applications from the ground up using React.js, JavaScript, HTML, CSS, and Bootstrap, creating responsive and user-centric interfaces.",
+        "Implemented scalable frontend logic with Redux.js for centralized state management, reducing redundant API calls by 35%.",
+        "Developed RESTful APIs and backend services with Node.js and Express.js, enabling seamless frontend-backend integration via Axios.",
+        "Used MongoDB for database design, CRUD operations, and managing application data effectively.",
+        "Participated in debugging, optimization, and code reviews in an agile environment, strengthening end-to-end development skills."
       ],
-      tech: ["React", "Node.js", "MongoDB", "Express", "Redux", "Bootstrap", "Axios"]
+      tech: ["React", "Node.js", "MongoDB", "Express", "Redux", "JavaScript", "Bootstrap", "Axios", "HTML5", "CSS3", "REST APIs", "Agile"]
     },
     {
       company: "Freelance",
@@ -138,7 +140,7 @@ export default function Experience() {
         ))}
       </div>
 
-      
+
     </section>
   );
 }
