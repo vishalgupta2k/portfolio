@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Send, Sparkles, User, Bot, Loader2 } from 'lucide-react';
+import { MessageSquare, X, Send, Sparkles, User, Bot, Loader2, Mic } from 'lucide-react';
 import './ChatBot.styles.css';
 
 export default function ChatBot() {
@@ -10,7 +10,79 @@ export default function ChatBot() {
     ]);
     const [input, setInput] = useState('');
     const [isLoading, setIsLoading] = useState(false);
+    const [isListening, setIsListening] = useState(false);
+    const [isSpeechSupported, setIsSpeechSupported] = useState(false);
     const scrollRef = useRef(null);
+
+    // Speech Recognition Setup
+    const recognitionRef = useRef(null);
+    const debounceTimerRef = useRef(null);
+
+    useEffect(() => {
+        const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+        if (SpeechRecognition) {
+            setIsSpeechSupported(true);
+            recognitionRef.current = new SpeechRecognition();
+            recognitionRef.current.continuous = true;
+            recognitionRef.current.interimResults = true;
+            recognitionRef.current.lang = 'en-US';
+
+            recognitionRef.current.onresult = (event) => {
+                let interimTranscript = '';
+                let finalTranscript = '';
+
+                for (let i = event.resultIndex; i < event.results.length; ++i) {
+                    if (event.results[i].isFinal) {
+                        finalTranscript += event.results[i][0].transcript;
+                    } else {
+                        interimTranscript += event.results[i][0].transcript;
+                    }
+                }
+
+                const currentText = finalTranscript || interimTranscript;
+                if (currentText) {
+                    setInput(currentText);
+
+                    // Debounce sending to API
+                    if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+                    debounceTimerRef.current = setTimeout(() => {
+                        handleSend(null, currentText);
+                        recognitionRef.current.stop();
+                        setIsListening(false);
+                    }, 1500); // Wait for 1.5 seconds of silence
+                }
+            };
+
+            recognitionRef.current.onerror = (event) => {
+                console.error('Speech recognition error:', event.error);
+                setIsListening(false);
+            };
+
+            recognitionRef.current.onend = () => {
+                setIsListening(false);
+            };
+        }
+
+        return () => {
+            if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+        };
+    }, []);
+
+    const startListening = () => {
+        if (!recognitionRef.current) {
+            alert("Speech recognition is not supported in your browser.");
+            return;
+        }
+        if (isListening) {
+            if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
+            recognitionRef.current.stop();
+            setIsListening(false);
+        } else {
+            setInput('');
+            setIsListening(true);
+            recognitionRef.current.start();
+        }
+    };
 
     useEffect(() => {
         if (scrollRef.current) {
@@ -124,12 +196,24 @@ export default function ChatBot() {
                         </div>
 
                         <form className="chat-input" onSubmit={handleSend}>
+                            {isSpeechSupported && (
+                                <button
+                                    type="button"
+                                    className={`mic-btn ${isListening ? 'listening' : ''}`}
+                                    onClick={startListening}
+                                    disabled={isLoading}
+                                    title="Talk to AI"
+                                >
+                                    <Mic size={18} />
+                                </button>
+                            )}
                             <input
                                 type="text"
                                 value={input}
                                 onChange={(e) => setInput(e.target.value)}
-                                placeholder="Type a message..."
+                                placeholder={isListening ? "Listening..." : "Type a message..."}
                                 disabled={isLoading}
+                                maxLength={500}
                             />
                             <button type="submit" disabled={!input.trim() || isLoading}>
                                 <Send size={18} />
