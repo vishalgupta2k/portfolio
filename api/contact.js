@@ -40,7 +40,7 @@ export default async function handler(req, res) {
             subject: `Portfolio Message from ${name}`,
             html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #7c4dff;">New Portfolio Contact</h2>
+          <h2 style="color: #7c4dff;">Portfolio Message</h2>
           <hr style="border: 1px solid #eee;" />
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
@@ -49,7 +49,7 @@ export default async function handler(req, res) {
             ${message.replace(/\n/g, '<br>')}
           </div>
           <hr style="border: 1px solid #eee; margin-top: 30px;" />
-          <p style="color: #999; font-size: 12px;">Sent from vishalgupta.dev portfolio</p>
+          <p style="color: #999; font-size: 12px;">Sent from portfolio.vishalgupta.xyz</p>
         </div>
       `,
         });
