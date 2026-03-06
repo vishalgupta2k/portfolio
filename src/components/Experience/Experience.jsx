@@ -15,10 +15,11 @@ export default function Experience() {
         "Partnered cross-functionally with the AI engineering team to develop and integrate a Generative AI Image Narration POC, earning the Q2 Excellence Award for delivering impactful technical innovation.",
         "Served as a core member of an elite SWAT team, architecting and delivering high-priority MVPs under accelerated timelines using React, FastAPI, Django, and Java.",
         "Contributed as a key member of the large-scale Angular-to-React migration team, redesigning legacy modules into modern, high-performance functional components.",
-        "Resolved critical 'Browser Unresponsive' bottlenecks by replacing legacy imperative jQuery with DocumentFragment batching and Virtualization, optimizing UI render times by more than 95%.",
-        "Led Root Cause Analysis (RCA) on severe latency issues, engineering targeted backend optimizations that slashed API response times by 98%.",
+        "Resolved critical 'Browser Unresponsive' bottlenecks by replacing legacy imperative jQuery with DocumentFragment batching and Virtualization, optimizing UI render times by more than 80%.",
+        "Led Root Cause Analysis (RCA) on severe latency issues, engineering targeted backend optimizations that slashed API response times by ~90%.",
         "Collaborated globally with cross-functional teams across the US, Taiwan, and Poland to triage and resolve P1/S1 UAT bugs, ensuring flawless on-time delivery.",
-        "Established rigorous quality standards by authoring comprehensive test suites (Vitest, JUnit) across React, Java, and Python codebases, achieving 100% coverage on new features."
+        "Established rigorous quality standards by authoring comprehensive test suites (Vitest, JUnit) across React, Java, and Python codebases, achieving 100% coverage on new features.",
+        "Actively participated in PR reviews and served as a designated RPR (Required PR Reviewer) for the React repository, enforcing code quality, consistency, and best practices across the codebase."
       ],
       tech: ["React", "FastAPI", "Redux", "Tailwind CSS", "Java", "Django", "Vitest", "JUnit", "OpenSearch", "MySQL", "MUI", "Angular", "Docker", "Git", "Agile Methodology", "Kanban", "Azure Boards"]
     },
