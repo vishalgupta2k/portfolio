@@ -8,13 +8,13 @@ export default function Projects() {
     {
       title: "typezy",
       stack: ["TypeScript", "Vitest", "npm", "MIT"],
-      desc: "A lightweight, zero-dependency TypeScript utility library for type checking and validation. 480+ downloads on npm.",
+      desc: "Published a lightweight TypeScript utility library for runtime type checking on npm; achieved 500+ downloads with zero dependencies.",
       github: "https://github.com/vishalgupta2k/typezy",
       live: "https://www.npmjs.com/package/typezy",
       badge: "Published on npm",
       badgeIcon: <Package size={14} />,
       stats: [
-        { icon: <Download size={14} />, text: "480+" },
+        { icon: <Download size={14} />, text: "500+" },
         { icon: <Star size={14} />, text: "v1.0.4" },
       ]
     },
@@ -27,19 +27,19 @@ export default function Projects() {
     {
       title: "Digital Menu App",
       stack: ["React", "Node.js", "Express", "MongoDB", "Redux", "Bootstrap"],
-      desc: "A user-friendly restaurant order system with real-time tracking and super admin dashboard.",
+      desc: "Architected a tri-tier restaurant ecosystem (Super Admin, Admin, User) with real-time order tracking and dynamic menu synchronization using MongoDB.",
       github: "https://github.com/vishalgupta2k"
     },
     {
       title: "AttendEase",
       stack: ["Python", "Tkinter", "OpenCV", "Machine Learning"],
-      desc: "Real-time attendance system using face recognition technology for seamless record management.",
+      desc: "Engineered a facial recognition-based attendance tracker using OpenCV with automated entry/exit logging and an administrative dashboard.",
       github: "https://github.com/vishalgupta2k/attendease"
     },
     {
       title: "Driver Drowsiness Detection",
       stack: ["Python", "OpenCV", "Deep Learning", "IoT"],
-      desc: "A safety-focused system utilizing machine learning to detect driver fatigue and prevent accidents.",
+      desc: "Developed a real-time computer vision system to detect driver fatigue via eye-closure analysis, triggering instant audible alerts for road safety.",
       github: "https://github.com/vishalgupta2k/Driver-drowsiness-detection-system"
     },
     {

@@ -54,7 +54,7 @@ export default function Hero() {
           </h2>
           <p>
             Building scalable digital solutions and exploring the frontiers of
-            AI/ML. Associate Software Engineer at Epiq Systems.
+            AI/ML. Software Engineer at Epiq Systems.
           </p>
           <div className="hero-actions">
             <MagneticButton>

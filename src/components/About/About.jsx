@@ -78,13 +78,11 @@ export default function About() {
           <h2 className="section-title">About Me</h2>
           <div className="section-underline" style={{ margin: '0' }}></div>
           <p>
-            I am a <span className="highlight">Software Engineer</span> based in Hyderabad, India, passionate about building elegant and high-performance digital experiences.
-            Currently, I'm innovating at <span className="highlight">Epiq Systems</span>, where I drive complex UI architectures and large-scale <span className="highlight">React</span> migrations.
+            I am a results-driven <span className="highlight">Full Stack Developer</span> based in Hyderabad, India, with 2+ years of experience architecting scalable web applications and AI-driven MVPs.
+            Currently, I'm a Software Engineer at <span className="highlight">Epiq Systems</span>, where I drive complex UI architectures and large-scale <span className="highlight">React</span> migrations.
           </p>
           <p>
-            Beyond writing clean code using <span className="highlight">React, FastAPI, Java, Django, SQL,</span> and <span className="highlight">OpenSearch</span>, my expertise extends to building
-            <span className="highlight"> AI-driven applications</span> and solving critical responsiveness bottlenecks.
-            Whether I'm part of a high-intensity  <span className="highlight"> SWAT Team </span>delivering mission-critical MVPs and developing open-source tools like <span className="highlight">typezy</span>, I thrive on creating products that make a real impact.
+            With proven expertise in <span className="highlight">React, Python/FastAPI, Java,</span> and cloud integrations, my true passion lies in solving critical performance bottlenecks. Recently, I architected a targeted database optimization that reduced critical API response times by <span className="highlight">99% (from 9s to 90ms)</span> and engineered an <span className="highlight">Award-Winning POC</span> using the internal AI APIs.
           </p>
           <div className="about-stats">
             <div className="stat-item">

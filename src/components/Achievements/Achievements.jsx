@@ -35,7 +35,7 @@ const achievements = [
     icon: Trophy,
     title: 'Winner — Logic Whirlpool',
     org: 'Regional Programming Contest',
-    description: '2nd Prize in a high-stakes regional programming contest, competing against 100+ teams from across the state.',
+    description: 'Secured 2nd Prize in a regional programming contest against 50+ teams.',
     color: '#ff6b6b',
   },
   {
@@ -107,7 +107,7 @@ export default function Achievements() {
         ))}
       </div>
 
-      
+
     </section>
   );
 }

@@ -6,20 +6,19 @@ export default function Experience() {
   const experiences = [
     {
       company: "Epiq Systems India Pvt. Ltd",
-      role: "Associate Software Engineer",
+      role: "Software Engineer",
       period: "Sep 2024 \u2013 Present",
       location: "Hyderabad, India",
       color: "#7c4dff",
       active: true,
       points: [
-        "Partnered cross-functionally with the AI engineering team to develop and integrate a Generative AI Image Narration POC, earning the Q2 Excellence Award for delivering impactful technical innovation.",
-        "Served as a core member of an elite SWAT team, architecting and delivering high-priority MVPs under accelerated timelines using React, FastAPI, Django, and Java.",
-        "Contributed as a key member of the large-scale Angular-to-React migration team, redesigning legacy modules into modern, high-performance functional components.",
-        "Resolved critical 'Browser Unresponsive' bottlenecks by replacing legacy imperative jQuery with DocumentFragment batching and Virtualization, optimizing UI render times by more than 80%.",
-        "Led Root Cause Analysis (RCA) on severe latency issues, engineering targeted backend optimizations that slashed API response times by ~90%.",
-        "Collaborated globally with cross-functional teams across the US, Taiwan, and Poland to triage and resolve P1/S1 UAT bugs, ensuring flawless on-time delivery.",
-        "Established rigorous quality standards by authoring comprehensive test suites (Vitest, JUnit) across React, Java, and Python codebases, achieving 100% coverage on new features.",
-        "Actively participated in PR reviews and served as a designated RPR (Required PR Reviewer) for the React repository, enforcing code quality, consistency, and best practices across the codebase."
+        "Delivered 4+ client-facing features including Excel document viewer integration and keyboard shortcut navigation, while contributing to the migration from legacy frontend to React and TypeScript across a large-scale e-discovery SaaS platform.",
+        "Reduced critical API response times from 9s to approximately 90ms (99% reduction) by resolving N+1 query bottlenecks, replacing correlated subqueries with optimized JOINs, and adding composite indexes.",
+        "Engineered performance optimization for a high-volume data grid processing 1000+ rows, implementing virtual scrolling, DOM batching with requestAnimationFrame, and debounced state management to reduce render blocking time by 95%.",
+        "Selected for SWAT team to build MVP integrating AI capabilities into the document review workflow, enabling AI-assisted review features for production deployment under accelerated timelines.",
+        "Built proof-of-concept for AI-powered image narration by creating a new asynchronous job within existing worker infrastructure to consume internal AI APIs, earning the Q2 Excellence Award.",
+        "Collaborated with distributed teams across the US, Taiwan, and Poland to scope requirements, resolve issues, and ensure timely delivery of features across frontend and microservices layers.",
+        "Active member of GitHub reviewer group, conducting code reviews across teams, performing root cause analysis for production defects, and enforcing coding standards and SonarQube compliance."
       ],
       tech: ["React", "FastAPI", "Redux", "Tailwind CSS", "Java", "Django", "Vitest", "JUnit", "OpenSearch", "MySQL", "MUI", "Angular", "Docker", "Git", "Agile Methodology", "Kanban", "Azure Boards"]
     },
